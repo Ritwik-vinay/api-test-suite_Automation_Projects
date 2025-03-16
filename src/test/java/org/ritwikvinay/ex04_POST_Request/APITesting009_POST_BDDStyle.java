@@ -29,5 +29,4 @@ public class APITesting009_POST_BDDStyle {
                 .when().log().all().post()
                 .then().log().all().statusCode(200);
 
-    }
-}
+    }}
