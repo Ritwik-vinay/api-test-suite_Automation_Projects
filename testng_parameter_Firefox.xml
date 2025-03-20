@@ -5,7 +5,7 @@
        <parameter name="browser" value="firefox"></parameter>
 
         <classes>
-            <class name="org.ritwikvinay.TestngExamples.APITesting_parameters_14"/>
+            <class name="org.ritwikvinay.TestngExamples.APITesting_014_parameters"/>
         </classes>
     </test>
 </suite>

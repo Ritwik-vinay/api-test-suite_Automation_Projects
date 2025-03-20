@@ -3,7 +3,7 @@ package org.ritwikvinay.TestngExamples;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class APITesting_parameters_14 {
+public class APITesting_014_parameters {
     @Parameters("browser")
     @Test
     public void startBrowser(String value){
