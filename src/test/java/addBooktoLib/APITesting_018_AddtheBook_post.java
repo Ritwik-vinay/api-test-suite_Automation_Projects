@@ -7,6 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
 public class APITesting_018_AddtheBook_post {
+    public static String Id;
     RequestSpecification r;
     ValidatableResponse vr;
     Response response;
@@ -29,7 +30,7 @@ public class APITesting_018_AddtheBook_post {
         response = r.when().log().all().post();
         vr = response.then().log().all();
         vr.statusCode(200);
-        String Id = response.then().extract().path("ID");
+        Id = response.then().extract().path("ID");
         System.out.println(Id);
 
 
