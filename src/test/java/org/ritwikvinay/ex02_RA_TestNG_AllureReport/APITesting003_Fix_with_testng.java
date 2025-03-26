@@ -12,7 +12,7 @@ public class APITesting003_Fix_with_testng {
         RestAssured
                 .given()
                 .baseUri("https://api.zippopotam.us")
-                .basePath("/IN/110048")
+                .basePath("/in/700048")
                 .when()
                 .get()
                 .then()
@@ -24,7 +24,7 @@ public class APITesting003_Fix_with_testng {
         RestAssured.given().baseUri("https://api.zippopotam.us")
                 .basePath("/IN/0")
                 .when().get()
-                .then().log().all().statusCode(200);
+                .then().log().all().statusCode(404);
     }
     @Test
     @Description("TC#2 - Verify that the Invalid Pincode gives error")
@@ -32,6 +32,6 @@ public class APITesting003_Fix_with_testng {
         RestAssured.given().baseUri("https://api.zippopotam.us")
                 .basePath("/IN/ ")
                 .when().get()
-                .then().log().all().statusCode(200);
+                .then().log().all().statusCode(404);
     }
 }

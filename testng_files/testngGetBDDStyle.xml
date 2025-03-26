@@ -2,7 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="C:/Users/vinay/IdeaProjects/API_Automation_programs/src/test/java/org/ritwikvinay/TestngExamples/APITesting_015_enabled.java">
-        <classes/>
+          name="APITesting">
+        <classes>
+            <class name="org.ritwikvinay.ex03_GET_Request.APITesting005_Test_GET_BDDStyle"></class>
+        </classes>
+        
     </test>
 </suite>

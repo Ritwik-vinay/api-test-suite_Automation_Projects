@@ -7,39 +7,34 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
-public class APITesting009_POST_NonBDDStyle {
+public class APITesting009_POST_NonBDDStyle_token {
     public static String bookingId;
 
     @Test
     @Description("Verify the Post request in the Booking")
 
-    public void Test_restfullbooker_creation() {
+    public void Test_restfullbooker_Post_Tokencreation() {
         RequestSpecification r;
         Response response;
         ValidatableResponse vr;
         String uri = "https://restful-booker.herokuapp.com";
         String payload = "{\n" +
-                "    \"firstname\" : \"Ritwik\",\n" +
-                "    \"lastname\" : \"vinay\",\n" +
-                "    \"totalprice\" : 111,\n" +
-                "    \"depositpaid\" : true,\n" +
-                "    \"bookingdates\" : {\n" +
-                "        \"checkin\" : \"2018-01-01\",\n" +
-                "        \"checkout\" : \"2019-01-01\"\n" +
-                "    },\n" +
-                "    \"additionalneeds\" : \"Breakfast\"\n" +
+                "    \"username\" : \"admin\",\n" +
+                "    \"password\" : \"password123\"\n" +
                 "}";
+        //Pre-condition- part-> 1
         r = RestAssured.given();
-        r.baseUri(uri).basePath("/booking");
+        r.baseUri(uri).basePath("/auth");
         r.contentType("application/json");
         r.body(payload).log().all();
 
+        //Making Request =part2
         response = r.when().log().all().post();
 
+        // Verification part -Part3
         vr = response.then().log().all();
         vr.statusCode(200);
-        String bookingId = String.valueOf(response.jsonPath().getInt("bookingid"));
-        System.out.println("Booking ID is: " + bookingId);
+
 
 
     }

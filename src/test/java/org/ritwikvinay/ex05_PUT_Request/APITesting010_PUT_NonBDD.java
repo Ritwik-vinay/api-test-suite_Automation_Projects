@@ -15,9 +15,8 @@ public class APITesting010_PUT_NonBDD {
     @Description("Verify Put method ")
     public void test_put_non_bdd() {
 
-        String token = "9cc9447e730afc3";
-        String bookingid = String.valueOf(bookingId);
-        System.out.println(bookingid);
+        String token = "acf8a72b8fb0531";
+        String Bookingid="1349";
 
         String payloadPUT = "{\n" +
                 "    \"firstname\" : \"Pramod\",\n" +
@@ -34,7 +33,7 @@ public class APITesting010_PUT_NonBDD {
 
         RequestSpecification requestSpecification = RestAssured.given();
         requestSpecification.baseUri("https://restful-booker.herokuapp.com/");
-        requestSpecification.basePath("/booking/" + bookingid);
+        requestSpecification.basePath("/booking/"+Bookingid);
         requestSpecification.contentType(ContentType.JSON);
 //        requestSpecification.auth().basic("admin","password123");
 
