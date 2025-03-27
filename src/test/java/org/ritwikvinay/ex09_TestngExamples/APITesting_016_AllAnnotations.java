@@ -1,4 +1,4 @@
-package org.ritwikvinay.TestngExamples;
+package org.ritwikvinay.ex09_TestngExamples;
 
 import org.testng.annotations.*;
 

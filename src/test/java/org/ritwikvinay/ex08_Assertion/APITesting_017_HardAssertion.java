@@ -1,4 +1,4 @@
-package org.ritwikvinay.TestngExamples;
+package org.ritwikvinay.ex08_Assertion;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

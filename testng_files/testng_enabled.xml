@@ -5,7 +5,7 @@
 
 
         <classes>
-            <class name="org.ritwikvinay.TestngExamples.APITesting_015_enabled"/>
+            <class name="org.ritwikvinay.ex09_TestngExamples.APITesting_015_enabled"/>
         </classes>
     </test>
 </suite>

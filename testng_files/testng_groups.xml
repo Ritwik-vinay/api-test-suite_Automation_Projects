@@ -9,7 +9,7 @@
         </groups>
 
         <classes>
-            <class name="org.ritwikvinay.TestngExamples.APITesting_013_groups"/>
+            <class name="org.ritwikvinay.ex09_TestngExamples.APITesting_013_groups"/>
         </classes>
     </test>
 </suite>

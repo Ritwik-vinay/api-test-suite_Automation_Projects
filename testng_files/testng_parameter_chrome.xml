@@ -5,7 +5,7 @@
        <parameter name="browser" value="chrome"></parameter>
 
         <classes>
-            <class name="org.ritwikvinay.TestngExamples.APITesting_014_parameters"/>
+            <class name="org.ritwikvinay.ex09_TestngExamples.APITesting_014_parameters"/>
         </classes>
     </test>
 </suite>
