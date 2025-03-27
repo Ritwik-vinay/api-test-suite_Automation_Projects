@@ -1,4 +1,4 @@
-package org.ritwikvinay.ex10_PayloadManagement.jackson;
+package org.ritwikvinay.ex10_PayloadManagement.tool;
 
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
@@ -7,14 +7,14 @@ import org.testng.annotations.Test;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class APITesting021_RestAssuredPayload_Map {
     RequestSpecification r;
     Response response;
     ValidatableResponse vr;
+
     @Test
-    public void test_post(){
+    public void test_post() {
         //String payload_POST = "{\n" +
         //                "    \"firstname\" : \"Ritwik\",\n" +
         //                "    \"lastname\" : \"vinay\",\n" +
@@ -28,17 +28,17 @@ public class APITesting021_RestAssuredPayload_Map {
         //                "}";
 
         Map<String, Object> jsonBodyUsingMap = new LinkedHashMap<>();
-        jsonBodyUsingMap.put("firstname","Ritwik");
-        jsonBodyUsingMap.put("lastname","vinay");
-        jsonBodyUsingMap.put("totalprice","111");
-        jsonBodyUsingMap.put("depositpaid","false");
+        jsonBodyUsingMap.put("firstname", "Ritwik");
+        jsonBodyUsingMap.put("lastname", "vinay");
+        jsonBodyUsingMap.put("totalprice", "111");
+        jsonBodyUsingMap.put("depositpaid", "false");
 
-        Map<String, Object> bookingDatesMap= new LinkedHashMap<>();
-        bookingDatesMap.put("checkin","2018-01-01");
-        bookingDatesMap.put("checkout","2019-01-01");
+        Map<String, Object> bookingDatesMap = new LinkedHashMap<>();
+        bookingDatesMap.put("checkin", "2018-01-01");
+        bookingDatesMap.put("checkout", "2019-01-01");
 
-        jsonBodyUsingMap.put("bookingdates",bookingDatesMap);
-        jsonBodyUsingMap.put("additionalneeds","Breakfast");
+        jsonBodyUsingMap.put("bookingdates", bookingDatesMap);
+        jsonBodyUsingMap.put("additionalneeds", "Breakfast");
         System.out.println(jsonBodyUsingMap);
 
     }

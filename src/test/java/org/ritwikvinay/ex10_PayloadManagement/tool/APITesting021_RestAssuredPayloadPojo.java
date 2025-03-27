@@ -1,4 +1,4 @@
-package org.ritwikvinay.ex10_PayloadManagement.jackson;
+package org.ritwikvinay.ex10_PayloadManagement.tool;
 
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;

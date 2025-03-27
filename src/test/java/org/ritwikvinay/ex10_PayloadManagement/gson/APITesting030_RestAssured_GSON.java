@@ -2,12 +2,12 @@ package org.ritwikvinay.ex10_PayloadManagement.gson;
 
 import com.google.gson.Gson;
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.ritwikvinay.ex10_PayloadManagement.manual.Booking;
 import org.ritwikvinay.ex10_PayloadManagement.manual.BookingDates;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -18,8 +18,9 @@ public class APITesting030_RestAssured_GSON {
     //JSON-is a plain Text in key and value pair to transfer from client to server
     RequestSpecification requestSpecification;
     ValidatableResponse validatableResponse;
+
     @Test
-    public void test_create_Booking_positive(){
+    public void test_create_Booking_positive() {
         //Step 1-> Post
         //URL-> Base URL+ Base Path
         //Header
@@ -33,7 +34,7 @@ public class APITesting030_RestAssured_GSON {
         //Status Code
         //First Name
         //Time Response
-        Booking booking= new Booking();
+        Booking booking = new Booking();
         booking.setFirstname("Ritwik");
         booking.setLastname("Vinay");
         booking.setTotalprice(122);
@@ -65,6 +66,16 @@ public class APITesting030_RestAssured_GSON {
         String Firstname1 = response.then().extract().path("booking.firstname");
         //Assertj
         assertThat(Firstname1).isNotNull().isEqualTo("Ritwik");
+        //Case 2-> jsonpath.getString("") JsonPath Extraction
+        JsonPath jsonPath = new JsonPath(response.asString());
+        String bookingId = jsonPath.getString("bookingid");
+        System.out.println(bookingId);
+        //Deser
+        String jsonResponseString1 = response.asString();
+        BookingResponse bookingResponse = gson.fromJson(jsonResponseString1, BookingResponse.class);
+        System.out.println(bookingResponse.getBookingid());
+        System.out.println(bookingResponse.getBooking().getFirstname());
+        System.out.println(bookingResponse.getBooking().getLastname());
 
 
     }
